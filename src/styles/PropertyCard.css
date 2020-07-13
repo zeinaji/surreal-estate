@@ -1,0 +1,34 @@
+.property-card {
+  width: 200px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid grey;
+}
+
+.email {
+  height: 30px;
+  width: 70px;
+  text-align: center;
+  background-color: grey;
+}
+
+.email-link {
+  margin: auto;
+  color: white;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.email-link:hover {
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.envelope {
+  margin-right: 3px;
+}

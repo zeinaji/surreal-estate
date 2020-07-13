@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+.alert {
+  margin: 5px 0px 20px 0px;
+  padding: 3px 10px 3px 10px;
+  font-family: "Nunito", sans-serif;
+  float: left;
+}
+
+.success {
+  background-color: rgb(143, 228, 143);
+}
+
+.fail {
+  background-color: rgb(233, 87, 87);
+}

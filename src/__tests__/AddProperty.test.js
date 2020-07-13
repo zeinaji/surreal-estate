@@ -1,40 +1,115 @@
 import React from "react";
-import { render, getByDisplayValue } from "@testing-library/react";
+import { render, fireEvent, wait } from "@testing-library/react";
 import AddProperty from "../components/AddProperty";
 
+//requests
+import addProperty from "../requests/add-property";
+jest.mock("../requests/add-property");
+
 describe("AddProperty", () => {
+  let title;
+  let type;
+  let bedrooms;
+  let bathrooms;
+  let price;
+  let city;
+  let email;
+  let add;
+
+  beforeEach(() => {
+    const { getByText, getByPlaceholderText, getByDisplayValue } = render(
+      <AddProperty />
+    );
+
+    title = getByPlaceholderText("Title");
+    type = getByDisplayValue("Flat");
+    bedrooms = getByPlaceholderText("Bedrooms number");
+    bathrooms = getByPlaceholderText("Bathrooms number");
+    price = getByPlaceholderText("Price");
+    city = getByDisplayValue("Manchester");
+    email = getByPlaceholderText("example@hotmail.com");
+    add = getByText("Add");
+  });
   xit("renders correctly", () => {
     const { asFragment } = render(<AddProperty />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders all input fields and button", () => {
-    const { getByText, getByPlaceholderText, getByDisplayValue } = render(
-      <AddProperty />
-    );
-
-    const title = getByPlaceholderText("Title");
     expect(title).toHaveAttribute("id-", "title");
-
-    const type = getByDisplayValue("Flat");
     expect(type).toHaveAttribute("id", "type");
-
-    const bedrooms = getByPlaceholderText("Bedrooms number");
     expect(bedrooms).toHaveAttribute("id-", "bedrooms");
-
-    const bathrooms = getByPlaceholderText("Bathrooms number");
     expect(bathrooms).toHaveAttribute("id-", "bathrooms");
-
-    const price = getByPlaceholderText("Price");
     expect(price).toHaveAttribute("id-", "price");
-
-    const city = getByDisplayValue("Manchester");
     expect(city).toHaveAttribute("id", "city");
-
-    const email = getByPlaceholderText("example@hotmail.com");
     expect(email).toHaveAttribute("id-", "email");
-
-    const add = getByText("Add");
     expect(add).toHaveAttribute("type", "submit");
+  });
+
+  it("catches and posts the user's input", async () => {
+    fireEvent.change(title, {
+      target: { value: "City Centre Flat" },
+    });
+    fireEvent.change(bedrooms, {
+      target: { value: 2 },
+    });
+    fireEvent.change(bathrooms, {
+      target: { value: 1 },
+    });
+    fireEvent.change(price, {
+      target: { value: 600 },
+    });
+    fireEvent.change(city, {
+      target: { value: "Sheffield" },
+    });
+    fireEvent.change(email, {
+      target: { value: "exampleemail@example.com" },
+    });
+    fireEvent.click(add);
+
+    expect(title.value).toBe("City Centre Flat");
+    expect(type.value).toBe("Flat");
+    expect(bedrooms.value).toBe("2");
+    expect(bathrooms.value).toBe("1");
+    expect(price.value).toBe("600");
+    expect(city.value).toBe("Sheffield");
+    expect(email.value).toBe("exampleemail@example.com");
+
+    await wait(() => {
+      expect(addProperty).toHaveBeenCalledTimes(1);
+      expect(addProperty).toHaveBeenCalledWith({
+        title: "City Centre Flat",
+        type: "Flat",
+        bedrooms: "2",
+        bathrooms: "1",
+        price: "600",
+        city: "Sheffield",
+        email: "exampleemail@example.com",
+      });
+    });
+  });
+
+  it("it doesn't render the Alert component before anything is added", () => {
+    const { queryByText } = render(<AddProperty />);
+    expect(queryByText(/successful/)).not.toBeInTheDocument();
+    expect(queryByText(/error/)).toBeFalsy();
+  });
+
+  it("renders the Alert component when the request is succesful", async () => {
+    const { getByText } = render(<AddProperty />);
+    addProperty.mockResolvedValue(404);
+    fireEvent.click(add);
+
+    await wait(() => expect(getByText(/error/)).toBeInTheDocument());
+  });
+
+  it("renders the Alert component when the request is succesful", async () => {
+    const { getByText } = render(<AddProperty />);
+    addProperty.mockResolvedValue(201);
+    fireEvent.click(add);
+
+    await wait(() =>
+      expect(getByText("This has been successful")).toBeInTheDocument()
+    );
   });
 });

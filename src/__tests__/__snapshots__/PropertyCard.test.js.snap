@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropertyCard renders 1`] = `
+<DocumentFragment>
+  <div
+    class="property-card"
+  >
+    <img
+      alt="logo"
+      class="logo"
+      src="../property.png"
+    />
+    <div
+      class="title"
+    />
+    <div
+      class="type-city"
+    >
+      undefined - undefined
+    </div>
+    <div
+      class="bathrooms"
+    />
+    <div
+      class="bedrooms"
+    />
+    <div
+      class="price"
+    >
+      £undefined
+    </div>
+    <button
+      type="submit"
+    />
+  </div>
+</DocumentFragment>
+`;

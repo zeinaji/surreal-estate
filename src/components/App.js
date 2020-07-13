@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/App.css";
 import NavBar from "./NavBar";
 import { Route, Switch } from "react-router-dom";
-import Home from "./Home";
 import AddProperty from "./AddProperty";
 import Properties from "./Properties";
 

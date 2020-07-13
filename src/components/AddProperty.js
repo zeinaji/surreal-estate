@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../styles/AddProperty.css";
 
+import addProperty from "../requests/add-property";
+import Alert from "./Alert";
+
 const AddProperty = () => {
   const initialState = {
     fields: {
@@ -12,12 +15,24 @@ const AddProperty = () => {
       price: "",
       email: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
-  const handleAddProperty = (event) => {
+  const handleAddProperty = async (event) => {
     event.preventDefault();
+    const status = await addProperty(fields);
+
+    if (status === 201) {
+      setAlert({ message: "This has been successful", isSuccess: true });
+    } else {
+      setAlert({ message: "There has been an error", isSuccess: false });
+    }
   };
 
   const handleFieldChange = (event) => {
@@ -26,7 +41,10 @@ const AddProperty = () => {
   };
   return (
     <div className="add-property">
-      <form onSubmit={handleAddProperty}>
+      {alert.message && (
+        <Alert message={alert.message} success={alert.isSuccess} />
+      )}
+      <form onSubmit={handleAddProperty} noValidate>
         <label>
           Title:
           <input
@@ -34,6 +52,7 @@ const AddProperty = () => {
             type="text"
             name="title"
             placeholder="Title"
+            required
             value={fields.title}
             onChange={handleFieldChange}
           />
@@ -48,13 +67,13 @@ const AddProperty = () => {
             value={fields.type}
             onChange={handleFieldChange}
           >
-            <option value="flat">Flat</option>
-            <option value="detached">Detached</option>
-            <option value="semi-detached">Semi-Detached</option>
-            <option value="terraced">Terraced</option>
-            <option value="end-of-terrace">End of Terrace</option>
-            <option value="cottage">Cottage</option>
-            <option value="bungalow">Bungalow</option>
+            <option>Flat</option>
+            <option>Detached</option>
+            <option>Semi-Detached</option>
+            <option>Terraced</option>
+            <option>End of Terrace</option>
+            <option>Cottage</option>
+            <option>Bungalow</option>
           </select>
         </label>
 
@@ -65,6 +84,7 @@ const AddProperty = () => {
             type="number"
             name="bedrooms"
             placeholder="Bedrooms number"
+            required
             value={fields.bedrooms}
             onChange={handleFieldChange}
           />
@@ -77,6 +97,7 @@ const AddProperty = () => {
             name="bathrooms"
             type="number"
             placeholder="Bathrooms number"
+            required
             value={fields.bathrooms}
             onChange={handleFieldChange}
           />
@@ -89,6 +110,7 @@ const AddProperty = () => {
             name="price"
             type="number"
             placeholder="Price"
+            required
             min="0.01"
             step="0.01"
             value={fields.price}
@@ -105,10 +127,10 @@ const AddProperty = () => {
             value={fields.city}
             onChange={handleFieldChange}
           >
-            <option value="manchester">Manchester</option>
-            <option value="leeds">Leeds</option>
-            <option value="sheffield">Sheffield</option>
-            <option value="liverpool">Liverpool</option>
+            <option>Manchester</option>
+            <option>Leeds</option>
+            <option>Sheffield</option>
+            <option>Liverpool</option>
           </select>
         </label>
 
@@ -119,6 +141,7 @@ const AddProperty = () => {
             name="email"
             type="email"
             placeholder="example@hotmail.com"
+            required
             value={fields.email}
             onChange={handleFieldChange}
           />
