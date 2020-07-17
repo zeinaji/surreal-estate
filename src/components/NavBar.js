@@ -2,8 +2,16 @@ import React from "react";
 import "../styles/NavBar.css";
 import logo from "../property.png";
 import { Link } from "react-router-dom";
+import FacebookLogin from "react-facebook-login";
 
-function NavBar() {
+function NavBar({ onLogin, userID, onLogout }) {
+  const facebookButton = userID ? (
+    <button onClick={onLogout} className="sign-out">
+      Sign Out
+    </button>
+  ) : (
+    <FacebookLogin callback={onLogin} appId="593615441355063" />
+  );
   return (
     <>
       <div className="wrapper">
@@ -19,6 +27,7 @@ function NavBar() {
             <Link className="navabar-links-item" to="/add-property">
               Add a Property
             </Link>
+            <li className="facebook-login">{facebookButton}</li>
           </ul>
         </nav>
       </div>
