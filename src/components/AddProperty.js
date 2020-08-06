@@ -10,9 +10,9 @@ const AddProperty = () => {
       title: "",
       city: "Manchester",
       type: "Flat",
-      bedrooms: "",
-      bathrooms: "",
-      price: "",
+      bedrooms: 0,
+      bathrooms: 0,
+      price: 0,
       email: "",
     },
     alert: {
@@ -26,30 +26,37 @@ const AddProperty = () => {
 
   const handleAddProperty = async (event) => {
     event.preventDefault();
-    const status = await addProperty(fields);
-
-    if (status === 201) {
-      setAlert({ message: "This has been successful", isSuccess: true });
+    const response = await addProperty(fields);
+    if (response.status === 201) {
+      setAlert({ message: "Property added successfully", isSuccess: true });
     } else {
-      setAlert({ message: "There has been an error", isSuccess: false });
+      setAlert({
+        message: "There has been an error, please try again late!",
+        isSuccess: false,
+      });
     }
   };
 
   const handleFieldChange = (event) => {
     const { name, value } = event.target;
-    setFields({ ...fields, [name]: value });
+    if (name === "price") {
+      setFields({ ...fields, [name]: parseInt(value) });
+    } else {
+      setFields({ ...fields, [name]: value });
+    }
+    console.log(typeof fields.price);
   };
   return (
     <div className="add-property">
       {alert.message && (
         <Alert message={alert.message} success={alert.isSuccess} />
       )}
-      <form onSubmit={handleAddProperty} noValidate>
+      <form onSubmit={handleAddProperty} className="add-form">
         <label>
           Title:
           <input
-            id-="title"
-            type="text"
+            id="title"
+            // type="text"
             name="title"
             placeholder="Title"
             required
@@ -80,8 +87,8 @@ const AddProperty = () => {
         <label>
           Bedrooms:
           <input
-            id-="bedrooms"
-            type="number"
+            id="bedrooms"
+            // type="number"
             name="bedrooms"
             placeholder="Bedrooms number"
             required
@@ -93,9 +100,9 @@ const AddProperty = () => {
         <label>
           Bathrooms:
           <input
-            id-="bathrooms"
+            id="bathrooms"
             name="bathrooms"
-            type="number"
+            //type="number"
             placeholder="Bathrooms number"
             required
             value={fields.bathrooms}
@@ -106,13 +113,13 @@ const AddProperty = () => {
         <label>
           Price: £
           <input
-            id-="price"
-            name="price"
             type="number"
+            id="price"
+            name="price"
             placeholder="Price"
-            required
-            min="0.01"
-            step="0.01"
+            // required
+            // min="0"
+            // step="1"
             value={fields.price}
             onChange={handleFieldChange}
           />
@@ -137,7 +144,7 @@ const AddProperty = () => {
         <label>
           Email:
           <input
-            id-="email"
+            id="email"
             name="email"
             type="email"
             placeholder="example@hotmail.com"
@@ -146,7 +153,9 @@ const AddProperty = () => {
             onChange={handleFieldChange}
           />
         </label>
-        <button type="submit">Add</button>
+        <button type="submit" className="add-button">
+          Add
+        </button>
       </form>
     </div>
   );

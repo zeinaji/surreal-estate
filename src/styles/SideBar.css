@@ -1,9 +1,68 @@
 .side-bar {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  height: 100%;
+  margin-right: 8px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+  padding: 0px;
+  /*padding-top: 10px;*/
+  border-radius: 5px;
+}
+
+.wrapper {
+  background-color: rgb(139, 192, 185, 0.2);
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+}
+
+h1 {
+  color: rgb(53, 175, 212);
 }
 
 .sidebar-link {
   display: block;
   margin: 10px;
+}
+
+.sidebar-link:hover {
+  color: rgb(153, 151, 151);
+}
+
+.search {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+.search > input {
+  width: 200px;
+  height: 25px;
+  outline: none;
+  margin-bottom: 10px;
+  border: 2px solid grey;
+  padding-left: 5px;
+  border-radius: 10px;
+}
+.search > a {
+  margin: 0px 0px 10px 5px;
+  border: 2px solid grey;
+  border-radius: 15px;
+  padding: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .cities,
+  .price {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

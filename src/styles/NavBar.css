@@ -1,31 +1,44 @@
 .navbar {
   background: white;
-  width: 100%;
-  height: 70px;
-  position: relative;
-  display: flex;
-  align-items: center;
+  width: 98.5%;
+  height: 100px;
+  /* position: relative;*/
+  /* display: flex;
+  align-items: center;*/
+
+  margin: 10px;
+  margin-top: 0;
+  border-radius: 0px 0px 5px 5px;
 }
-.wrapper {
+
+.navbar > div {
+  padding: 20px;
+  height: 100%;
   width: 100%;
-  height: 70px;
-  padding: 0;
-  padding-bottom: 3px;
-  background: linear-gradient(to right, rgb(112, 201, 253), rgb(235, 149, 206));
+  background: rgb(139, 192, 185, 0.2);
 }
 
 .logo {
-  margin: 10px 0px 10px 10px;
+  margin: 10px 0px 10px 20px;
   width: 40px;
   height: 40px;
 }
 
-.navbar-links {
+.navbar-links,
+.without-menu {
   display: flex;
-  margin-top: 33px;
+  float: right;
   list-style: none;
   margin-left: 0;
   padding-left: 0;
+  width: 95%;
+  position: relative;
+  right: 0;
+  justify-content: space-between;
+}
+
+.navbar-links {
+  width: 95%;
 }
 
 a {
@@ -40,15 +53,14 @@ a {
   color: rgb(83, 80, 80);
 }
 
-a:hover {
-  background: -webkit-linear-gradient(rgb(112, 201, 253), rgb(235, 149, 206));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.menu > div > div > ul > li > a:hover {
+  /* -webkit-background-clip: text;*/
+  -webkit-text-fill-color: grey;
 }
 
 .surreal-estate {
+  padding-top: 25px;
   padding-left: 5px;
-  padding-right: 50px;
 }
 
 .sign-out {
@@ -62,8 +74,27 @@ a:hover {
   text-decoration: none;
   text-transform: uppercase;
   transition: background-color 0.3s, border-color 0.3s;
-  background-color: #4c69ba;
-  border: calc(0.06887vw + 0.67769px) solid #4c69ba;
+  background: #4c69ba;
+  border: none;
   padding: calc(0.34435vw + 13.38843px) calc(0.34435vw + 18.38843px);
-  border-radius: 0;
+  margin: 0px 10px 0px 0px;
+  border-radius: 5px;
+}
+
+.kep-login-facebook.metro {
+  margin: 0;
+  background: #4c69ba;
+  border: none;
+  margin: 0px 10px 0px 0px;
+  display: inline;
+}
+
+#facebook-login > span > button {
+  border-radius: 5px;
+}
+
+@media (max-width: 450px) {
+  .surreal-estate {
+    padding-top: 10px;
+  }
 }

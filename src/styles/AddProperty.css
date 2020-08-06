@@ -2,16 +2,35 @@
 
 .add-property {
   padding: 10px;
-  height: 100vh;
+  width: 98.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--primary-color);
+  color: #fff;
+  height: 83vh;
+  position: relative;
+  margin: 10px;
+  margin-top: -15px;
 }
 
-form {
+.add-property::before {
+  content: "";
+  background: url("../pastel.jpg") no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.add-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(139, 192, 185, 0.8);
+  padding: 20px;
 }
 
 input::placeholder {
@@ -27,9 +46,10 @@ input::placeholder {
   padding-left: 4px;
   height: 25px;
   border-radius: 9px;
-  width: 305px;
+  width: 300px;
   display: inline-block;
   float: right;
+  outline: none;
 }
 
 .select-css::-ms-expand {
@@ -46,20 +66,33 @@ label {
   margin-bottom: 10px;
 }
 
-input {
+.add-form > label > input {
   border-radius: 9px;
   border: 1px solid rgb(83, 80, 80);
-  height: 20px;
+  height: 25px;
   width: 300px;
   display: inline-block;
   float: right;
+  outline: none;
+  padding: 5px;
 }
 
-button {
+.add-button {
+  width: 70px;
+  height: 30px;
   margin-top: 10px;
-  border-radius: 9px;
+  border-radius: 15px;
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   color: rgb(83, 80, 80);
   border: 1px solid rgb(83, 80, 80);
+
+  background-color: white;
+  transition: opacity 0.5s ease in;
+  cursor: pointer;
+  outline: none;
+}
+
+.add-button:hover {
+  opacity: 0.7;
 }

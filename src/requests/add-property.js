@@ -6,10 +6,9 @@ const postProperty = async (property) => {
       "http://localhost:4000/api/v1/PropertyListing",
       property
     );
-    return response.status;
+    return response;
   } catch (err) {
-    console.log(err.response.status);
-    return err.response.status;
+    return err.response;
   }
 };
 

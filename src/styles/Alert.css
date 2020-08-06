@@ -5,12 +5,14 @@
   padding: 3px 10px 3px 10px;
   font-family: "Nunito", sans-serif;
   float: left;
+  border-radius: 10px;
+  width: 400px;
 }
 
 .success {
-  background-color: rgb(143, 228, 143);
+  background-color: rgb(104, 197, 143);
 }
 
 .fail {
-  background-color: rgb(233, 87, 87);
+  background-color: rgb(235, 112, 112);
 }

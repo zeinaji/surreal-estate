@@ -47,7 +47,7 @@ describe("Properties", () => {
 
   xit("renders", async () => {
     const { asFragment } = render(
-      <MemoryRouter initialEntries={["/"]}>
+      <MemoryRouter initialEntries={["/view-properties"]}>
         <Properties />
       </MemoryRouter>
     );
@@ -58,7 +58,7 @@ describe("Properties", () => {
 
   it("renders all property cards", async () => {
     const { getAllByAltText } = render(
-      <MemoryRouter initialEntries={["/"]}>
+      <MemoryRouter initialEntries={["/view-properties"]}>
         <Properties />
       </MemoryRouter>
     );
@@ -76,11 +76,13 @@ describe("Properties", () => {
     );
 
     await wait(() => {
-      expect(getByText("This has not been successful")).toBeInTheDocument();
+      expect(
+        getByText("There has been an error, please try again later!")
+      ).toBeInTheDocument();
     });
   });
 
-  it("clikcing filter links updates product query params", async () => {
+  it("clicking filter links updates product query params", async () => {
     let testHistory, testLocation;
 
     const { getByText } = render(
@@ -126,7 +128,7 @@ describe("Properties", () => {
     );
 
     act(() => {
-      const ascendingLink = getByText("Price Ascending");
+      const ascendingLink = getByText("Price ascending");
       ascendingLink.dispatchEvent(new MouseEvent("click", { bubbles: true }));
     });
 
@@ -159,7 +161,7 @@ describe("Properties", () => {
       fireEvent.change(input, { target: { value: "flat" } });
     });
 
-    const button = getByRole("button");
+    const button = document.querySelector(".search-button");
     fireEvent.click(button);
 
     await wait(() => {
