@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/HamburgerMenu.css";
 
 const HamburgerMenu = () => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleChecked = () => {
-    setIsChecked(true);
-  };
-
-  const handleUnChecked = () => {
-    setIsChecked(false);
+  const removeMenu = () => {
+    const checkBoxElement = (document.querySelector(
+      ".toggler"
+    ).checked = false);
   };
   return (
     <>
@@ -24,16 +20,24 @@ const HamburgerMenu = () => {
             <div>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/" onClick={removeMenu}>
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/view-properties">View Properties</Link>
+                  <Link to="/view-properties" onClick={removeMenu}>
+                    View Properties
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/add-property">Add Property</Link>
+                  <Link to="/add-property" onClick={removeMenu}>
+                    Add Property
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/saved-properties">Saved Properties</Link>
+                  <Link to="/saved-properties" onClick={removeMenu}>
+                    Saved Properties
+                  </Link>
                 </li>
               </ul>
             </div>

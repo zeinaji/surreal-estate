@@ -44,7 +44,6 @@ const AddProperty = () => {
     } else {
       setFields({ ...fields, [name]: value });
     }
-    console.log(typeof fields.price);
   };
   return (
     <div className="add-property">

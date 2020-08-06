@@ -38,37 +38,36 @@ describe("AddProperty", () => {
   });
 
   it("renders all input fields and button", () => {
-    expect(title).toHaveAttribute("id-", "title");
+    expect(title).toHaveAttribute("id", "title");
     expect(type).toHaveAttribute("id", "type");
-    expect(bedrooms).toHaveAttribute("id-", "bedrooms");
+    expect(bedrooms).toHaveAttribute("id", "bedrooms");
     expect(bathrooms).toHaveAttribute("id", "bathrooms");
-    expect(price).toHaveAttribute("id-", "price");
+    expect(price).toHaveAttribute("id", "price");
     expect(city).toHaveAttribute("id", "city");
-    expect(email).toHaveAttribute("id-", "email");
+    expect(email).toHaveAttribute("id", "email");
     expect(add).toHaveAttribute("type", "submit");
   });
 
-  xit("catches and posts the user's input", async () => {
-    act(() => {
-      fireEvent.change(title, {
-        target: { value: "City Centre Flat" },
-      });
-      fireEvent.change(bedrooms, {
-        target: { value: 2 },
-      });
-      fireEvent.change(bathrooms, {
-        target: { value: 1 },
-      });
-      fireEvent.change(price, {
-        target: { value: 600 },
-      });
-      fireEvent.change(city, {
-        target: { value: "Sheffield" },
-      });
-      fireEvent.change(email, {
-        target: { value: "exampleemail@example.com" },
-      });
+  it("catches and posts the user's input", async () => {
+    fireEvent.change(title, {
+      target: { value: "City Centre Flat" },
     });
+    fireEvent.change(bedrooms, {
+      target: { value: 2 },
+    });
+    fireEvent.change(bathrooms, {
+      target: { value: 1 },
+    });
+    fireEvent.change(price, {
+      target: { value: 600 },
+    });
+    fireEvent.change(city, {
+      target: { value: "Sheffield" },
+    });
+    fireEvent.change(email, {
+      target: { value: "exampleemail@example.com" },
+    });
+
     fireEvent.click(add);
 
     await wait(() => {
