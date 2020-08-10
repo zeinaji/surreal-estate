@@ -30,6 +30,6 @@ html {
 
 @media (max-width: 650px) {
   .App {
-    grid-row-gap: 30px;
+    grid-row-gap: 10px;
   }
 }
