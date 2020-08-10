@@ -3,7 +3,7 @@ import Alert from "../components/Alert";
 import { render } from "@testing-library/react";
 
 describe("Alert", () => {
-  xit("it renders", () => {
+  it("it renders", () => {
     const { asFragment } = render(<Alert message="Error!" success={false} />);
     expect(asFragment()).toMatchSnapshot();
   });

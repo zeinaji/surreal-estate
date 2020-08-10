@@ -6,7 +6,7 @@ import { act } from "react-dom/test-utils";
 import Properties from "../components/Properties";
 
 describe("SideBar", () => {
-  xit("renders", async () => {
+  it("renders", async () => {
     const { asFragment } = render(
       <MemoryRouter initialEntries={["/"]}>
         <SideBar />

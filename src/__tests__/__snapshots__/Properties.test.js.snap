@@ -8,60 +8,103 @@ exports[`Properties renders 1`] = `
     <div
       class="side-bar"
     >
-      <form>
-        <input
-          type="text"
-          value=""
-        />
-        <button
-          class="search-button"
-          type="submit"
+      <div
+        class="wrapper"
+      >
+        <form
+          class="search"
         >
-          Search
-        </button>
-      </form>
-      <h1>
-        Filter by city
-      </h1>
-      <a
-        class="sidebar-link"
-        href="/?query={\\"city\\":\\"Manchester\\"}"
-      >
-        Manchester
-      </a>
-      <a
-        class="sidebar-link"
-        href="/?query={\\"city\\":\\"Sheffield\\"}"
-      >
-        Sheffield
-      </a>
-      <a
-        class="sidebar-link"
-        href="/?query={\\"city\\":\\"Leeds\\"}"
-      >
-        Leeds
-      </a>
-      <a
-        class="sidebar-link"
-        href="/?query={\\"city\\":\\"Liverpool\\"}"
-      >
-        Liverpool
-      </a>
-      <h1>
-        Sort by
-      </h1>
-      <a
-        class="sidebar-link"
-        href="/?sort={\\"price\\":1}"
-      >
-        Price Ascending
-      </a>
-      <a
-        class="sidebar-link"
-        href="/?sort={\\"price\\":-1}"
-      >
-        Price descending
-      </a>
+          <input
+            placeholder="Search"
+            type="text"
+            value=""
+          />
+          <a
+            class="search-button"
+            href="#"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-search fa-w-16 search"
+              data-icon="search"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </form>
+        <div
+          class="filter-by-city"
+        >
+          <h1>
+            Filter by city
+          </h1>
+          <ul
+            class="cities"
+          >
+            <a
+              class="sidebar-link"
+              href="/view-properties"
+            >
+              All
+            </a>
+            <a
+              class="sidebar-link"
+              href="/view-properties?query={\\"city\\":\\"Manchester\\"}"
+            >
+              Manchester
+            </a>
+            <a
+              class="sidebar-link"
+              href="/view-properties?query={\\"city\\":\\"Sheffield\\"}"
+            >
+              Sheffield
+            </a>
+            <a
+              class="sidebar-link"
+              href="/view-properties?query={\\"city\\":\\"Leeds\\"}"
+            >
+              Leeds
+            </a>
+            <a
+              class="sidebar-link"
+              href="/view-properties?query={\\"city\\":\\"Liverpool\\"}"
+            >
+              Liverpool
+            </a>
+          </ul>
+        </div>
+        <div
+          class="sort-by"
+        >
+          <h1>
+            Sort by
+          </h1>
+          <ul
+            class="price"
+          >
+            <a
+              class="sidebar-link"
+              href="/view-properties?sort={\\"price\\":1}"
+            >
+              Price ascending
+            </a>
+            <a
+              class="sidebar-link"
+              href="/view-properties?sort={\\"price\\":-1}"
+            >
+              Price descending
+            </a>
+          </ul>
+        </div>
+      </div>
     </div>
     <div
       class="properties-list"
@@ -72,7 +115,7 @@ exports[`Properties renders 1`] = `
         <img
           alt="logo"
           class="logo"
-          src="property.png"
+          src="house.png"
         />
         <div
           class="title"
@@ -161,7 +204,7 @@ exports[`Properties renders 1`] = `
         <img
           alt="logo"
           class="logo"
-          src="property.png"
+          src="house.png"
         />
         <div
           class="title"
@@ -250,7 +293,7 @@ exports[`Properties renders 1`] = `
         <img
           alt="logo"
           class="logo"
-          src="property.png"
+          src="house.png"
         />
         <div
           class="title"
@@ -333,6 +376,35 @@ exports[`Properties renders 1`] = `
           </a>
         </div>
       </div>
+    </div>
+    <div
+      class="footer"
+      style="height: 100px; width: 98.5%; position: absolute; color: rgb(53, 175, 212); bottom: 0px; right: 10px; left: 10px; align-items: center; justify-content: center; display: flex;"
+    >
+      <p
+        style="margin-right: 3px;"
+      >
+        Icons made by
+      </p>
+      <a
+        href="https://www.flaticon.com/authors/kiranshastry"
+        style="color: rgb(53, 175, 212);"
+        title="Kiranshastry"
+      >
+        Kiranshastry
+      </a>
+      <p
+        style="margin-right: 3px;"
+      >
+        from
+      </p>
+      <a
+        href="https://www.flaticon.com/"
+        style="color: rgb(53, 175, 212);"
+        title="Flaticon"
+      >
+         www.flaticon.com
+      </a>
     </div>
   </div>
 </DocumentFragment>

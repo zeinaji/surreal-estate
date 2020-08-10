@@ -32,7 +32,8 @@ describe("AddProperty", () => {
 
     addProperty.mockResolvedValue({ status: 201 });
   });
-  xit("renders correctly", () => {
+
+  it("renders correctly", () => {
     const { asFragment } = render(<AddProperty />);
     expect(asFragment()).toMatchSnapshot();
   });

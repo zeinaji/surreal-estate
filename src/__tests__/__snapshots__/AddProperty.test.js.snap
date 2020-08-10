@@ -5,147 +5,113 @@ exports[`AddProperty renders correctly 1`] = `
   <div
     class="add-property"
   >
-    <form>
-      <label
-        for="title"
-      >
-        Title: 
+    <form
+      class="add-form"
+    >
+      <label>
+        Title:
+        <input
+          id="title"
+          name="title"
+          placeholder="Title"
+          required=""
+          value=""
+        />
       </label>
-      <input
-        id-="title"
-        name="title"
-        placeholder="Title"
-        type="text"
-        value=""
-      />
-      <label
-        for="type"
-      >
-        Type: 
+      <label>
+        Type:
+        <select
+          class="select-css"
+          id="type"
+          name="type"
+        >
+          <option>
+            Flat
+          </option>
+          <option>
+            Detached
+          </option>
+          <option>
+            Semi-Detached
+          </option>
+          <option>
+            Terraced
+          </option>
+          <option>
+            End of Terrace
+          </option>
+          <option>
+            Cottage
+          </option>
+          <option>
+            Bungalow
+          </option>
+        </select>
       </label>
-      <select
-        class="select-css"
-        id="type"
-        name="type"
-      >
-        <option
-          value="flat"
-        >
-          Flat
-        </option>
-        <option
-          value="detached"
-        >
-          Detached
-        </option>
-        <option
-          value="semi-detached"
-        >
-          Semi-Detached
-        </option>
-        <option
-          value="terraced"
-        >
-          Terraced
-        </option>
-        <option
-          value="end-of-terrace"
-        >
-          End of Terrace
-        </option>
-        <option
-          value="cottage"
-        >
-          Cottage
-        </option>
-        <option
-          value="bungalow"
-        >
-          Bungalow
-        </option>
-      </select>
-      <label
-        for="bedrooms"
-      >
-        Bedrooms: 
+      <label>
+        Bedrooms:
+        <input
+          id="bedrooms"
+          name="bedrooms"
+          placeholder="Bedrooms number"
+          required=""
+          value="0"
+        />
       </label>
-      <input
-        id-="bedrooms"
-        name="bedrooms"
-        placeholder="Bedrooms number"
-        type="number"
-        value=""
-      />
-      <label
-        for="bathrooms"
-      >
-        Bathrooms: 
+      <label>
+        Bathrooms:
+        <input
+          id="bathrooms"
+          name="bathrooms"
+          placeholder="Bathrooms number"
+          required=""
+          value="0"
+        />
       </label>
-      <input
-        id-="bathrooms"
-        name="bathrooms"
-        placeholder="Bathrooms number"
-        type="number"
-        value=""
-      />
-      <label
-        for="price"
-      >
-        Price: £ 
+      <label>
+        Price: £
+        <input
+          id="price"
+          name="price"
+          placeholder="Price"
+          type="number"
+          value="0"
+        />
       </label>
-      <input
-        id-="price"
-        min="0.01"
-        name="price"
-        placeholder="Price"
-        step="0.01"
-        type="number"
-        value=""
-      />
-      <label
-        for="city"
-      >
+      <label>
         City
+        <select
+          class="select-css"
+          id="city"
+          name="city"
+        >
+          <option>
+            Manchester
+          </option>
+          <option>
+            Leeds
+          </option>
+          <option>
+            Sheffield
+          </option>
+          <option>
+            Liverpool
+          </option>
+        </select>
       </label>
-      <select
-        class="select-css"
-        id="city"
-        name="city"
-      >
-        <option
-          value="manchester"
-        >
-          Manchester
-        </option>
-        <option
-          value="leeds"
-        >
-          Leeds
-        </option>
-        <option
-          value="sheffield"
-        >
-          Sheffield
-        </option>
-        <option
-          value="liverpool"
-        >
-          Liverpool
-        </option>
-      </select>
-      <label
-        for="email"
-      >
-        Email: 
+      <label>
+        Email:
+        <input
+          id="email"
+          name="email"
+          placeholder="example@hotmail.com"
+          required=""
+          type="email"
+          value=""
+        />
       </label>
-      <input
-        id-="email"
-        name="email"
-        placeholder="example@hotmail.com"
-        type="email"
-        value=""
-      />
       <button
+        class="add-button"
         type="submit"
       >
         Add

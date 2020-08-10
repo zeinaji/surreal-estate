@@ -45,7 +45,7 @@ describe("Properties", () => {
     });
   });
 
-  xit("renders", async () => {
+  it("renders", async () => {
     const { asFragment } = render(
       <MemoryRouter initialEntries={["/view-properties"]}>
         <Properties />

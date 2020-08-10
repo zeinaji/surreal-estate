@@ -3,6 +3,7 @@ import getSaved from "../requests/get-saved";
 import removeProperties from "../requests/remove-properties";
 import "../styles/SavedProperties.css";
 import FacebookLogin from "react-facebook-login";
+import { Link } from "react-router-dom";
 
 const SavedProperties = ({ userID, onLogout, onLogin }) => {
   const facebookButton = userID ? (
@@ -44,7 +45,35 @@ const SavedProperties = ({ userID, onLogout, onLogin }) => {
           {facebookButton}
         </div>
       )}
-      {userID && (
+      {userID && !favourites.length && (
+        <div
+          className="noFavs"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <h1
+            style={{
+              alignSelf: "center",
+              color: "white",
+              textAlign: "center",
+              width: "100%",
+            }}
+          >
+            There are currently no saved properties!
+          </h1>
+          <Link
+            class="btn"
+            to="/view-properties"
+            style={{ alignSelf: "center", border: "none" }}
+          >
+            Properties
+          </Link>
+        </div>
+      )}
+      {userID && favourites.length > 0 && (
         <div className="favourite-list">
           {favourites.map((favourite) => (
             <div className="favourite" key={favourites.indexOf(favourite)}>

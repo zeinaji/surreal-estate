@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/AddProperty.css";
 
 import addProperty from "../requests/add-property";
@@ -23,6 +23,10 @@ const AddProperty = () => {
 
   const [fields, setFields] = useState(initialState.fields);
   const [alert, setAlert] = useState(initialState.alert);
+
+  useEffect(() => {
+    setTimeout(() => setAlert({ message: "" }), 6000);
+  }, [alert]);
 
   const handleAddProperty = async (event) => {
     event.preventDefault();

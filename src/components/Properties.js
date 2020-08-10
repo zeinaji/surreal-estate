@@ -87,7 +87,40 @@ const Properties = ({ userID }) => {
             </div>
           </>
         )}
-        {/* <div className="footer"></div> */}
+        <div
+          className="footer"
+          style={{
+            backgroundColor: "rgb(139, 192, 185, 0.2)",
+            height: "100px",
+            width: "98.5%",
+            position: "absolute",
+            color: "rgb(53, 175, 212)",
+            bottom: "0px",
+            right: "10px",
+            left: "10px",
+            alignItems: "center",
+            justifyContent: "center",
+            display: "flex",
+          }}
+        >
+          <p style={{ marginRight: "3px" }}>Icons made by</p>
+          <a
+            style={{ color: "rgb(53, 175, 212)" }}
+            href="https://www.flaticon.com/authors/kiranshastry"
+            title="Kiranshastry"
+          >
+            Kiranshastry
+          </a>
+          <p style={{ marginRight: "3px" }}>from</p>
+          <a
+            style={{ color: "rgb(53, 175, 212)" }}
+            href="https://www.flaticon.com/"
+            title="Flaticon"
+          >
+            {" "}
+            www.flaticon.com
+          </a>
+        </div>
       </div>
     );
   } else {

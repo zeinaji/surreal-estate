@@ -2,8 +2,10 @@
 
 exports[`Alert it renders 1`] = `
 <DocumentFragment>
-  <h1>
+  <div
+    class="alert fail"
+  >
     Error!
-  </h1>
+  </div>
 </DocumentFragment>
 `;

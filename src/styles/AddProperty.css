@@ -42,7 +42,7 @@ input::placeholder {
 .select-css {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
-  color: rgb(83, 80, 80);
+  /* color: rgb(83, 80, 80);*/
   padding-left: 4px;
   height: 25px;
   border-radius: 9px;

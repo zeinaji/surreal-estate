@@ -3,7 +3,7 @@ import PropertyCard from "../components/PropertyCard";
 import { render } from "@testing-library/react";
 
 describe("PropertyCard", () => {
-  xit("renders", () => {
+  it("renders", () => {
     const { asFragment } = render(<PropertyCard />);
     expect(asFragment()).toMatchSnapshot();
   });
