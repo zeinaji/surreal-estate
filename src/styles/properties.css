@@ -79,4 +79,7 @@
     grid-template-rows: 300px 6fr 100px;
     margin-left: 10px;
   }
+  .footer {
+    flex-direction: column;
+  }
 }
