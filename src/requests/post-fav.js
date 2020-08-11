@@ -3,7 +3,7 @@ import axios from "axios";
 const postFavourite = async (propertyId, userID) => {
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/Favourite",
+      "https://surreal-estate1.herokuapp.com/api/v1/Favourite",
       {
         propertyListing: propertyId,
         fbUserId: userID,

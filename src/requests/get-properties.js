@@ -6,7 +6,7 @@ const getProperties = async (city) => {
     const source = CancelToken.source();
 
     const response = await axios.get(
-      `http://localhost:4000/api/v1/PropertyListing/${city}`,
+      `https://surreal-estate1.herokuapp.com/api/v1/PropertyListing/${city}`,
       { cancelToken: source.token }
     );
     return response;

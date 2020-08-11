@@ -3,7 +3,7 @@ import axios from "axios";
 const postProperty = async (property) => {
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/PropertyListing",
+      "https://surreal-estate1.herokuapp.com/api/v1/PropertyListing",
       property
     );
     return response;

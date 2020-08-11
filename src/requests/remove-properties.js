@@ -3,7 +3,7 @@ import axios from "axios";
 const removeProperties = (favouriteId) => {
   axios
     .delete(
-      `http://localhost:4000/api/v1/Favourite/${favouriteId}/?populate=propertyListing`
+      `https://surreal-estate1.herokuapp.com/api/v1/Favourite/${favouriteId}/?populate=propertyListing`
     )
 
     .then((response) => {
