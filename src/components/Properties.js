@@ -43,10 +43,9 @@ const Properties = ({ userID }) => {
 
   const handleRemoveProperty = async (propertyId) => {
     try {
-      console.log(propertyId);
       const res = await axios({
         method: "DELETE",
-        url: `https://surreal-estate-two.vercel.app/api/v1/Favourite/?query={"propertyListing":"${propertyId}"}`,
+        url: `https://surreal-estate1.herokuapp.com/api/v1/Favourite/?query={"propertyListing":"${propertyId}"}`,
       });
       console.log(res);
     } catch (err) {
