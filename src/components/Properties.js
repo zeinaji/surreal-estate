@@ -46,7 +46,7 @@ const Properties = ({ userID }) => {
       console.log(propertyId);
       const res = await axios({
         method: "DELETE",
-        url: `http://localhost:4000/api/v1/Favourite/?query={"propertyListing":"${propertyId}"}`,
+        url: `https://surreal-estate-two.vercel.app/api/v1/Favourite/?query={"propertyListing":"${propertyId}"}`,
       });
       console.log(res);
     } catch (err) {
