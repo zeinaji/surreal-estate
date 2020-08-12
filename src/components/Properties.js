@@ -88,7 +88,7 @@ const Properties = ({ userID }) => {
         )}
         <div
           className="footer"
-          style={{
+          /*} style={{
             backgroundColor: "rgb(139, 192, 185, 0.2)",
             height: "100px",
             width: "98.5%",
@@ -100,7 +100,7 @@ const Properties = ({ userID }) => {
             alignItems: "center",
             justifyContent: "center",
             display: "flex",
-          }}
+          }}*/
         >
           <p style={{ marginRight: "3px" }}>Icons made by</p>
           <a

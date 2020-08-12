@@ -55,7 +55,7 @@ const AddProperty = () => {
         <Alert message={alert.message} success={alert.isSuccess} />
       )}
       <form onSubmit={handleAddProperty} className="add-form">
-        <label>
+        <label className="label">
           Title:
           <input
             id="title"
@@ -68,7 +68,7 @@ const AddProperty = () => {
           />
         </label>
 
-        <label>
+        <label className="label">
           Type:
           <select
             className="select-css"
@@ -87,7 +87,7 @@ const AddProperty = () => {
           </select>
         </label>
 
-        <label>
+        <label className="label">
           Bedrooms:
           <input
             id="bedrooms"
@@ -100,7 +100,7 @@ const AddProperty = () => {
           />
         </label>
 
-        <label>
+        <label className="label">
           Bathrooms:
           <input
             id="bathrooms"
@@ -113,7 +113,7 @@ const AddProperty = () => {
           />
         </label>
 
-        <label>
+        <label className="label">
           Price: £
           <input
             type="number"
@@ -128,7 +128,7 @@ const AddProperty = () => {
           />
         </label>
 
-        <label>
+        <label className="label">
           City
           <select
             className="select-css"
@@ -144,7 +144,7 @@ const AddProperty = () => {
           </select>
         </label>
 
-        <label>
+        <label className="label">
           Email:
           <input
             id="email"

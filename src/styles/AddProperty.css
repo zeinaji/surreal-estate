@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
 .add-property {
-  padding: 10px;
-  width: 98.5%;
+  /* padding: 10px;*/
+  padding-top: 10px;
+  width: 98.5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--primary-color);
   color: #fff;
-  height: 83vh;
+  height: 85vh;
   position: relative;
   margin: 10px;
   margin-top: -15px;
@@ -56,7 +57,7 @@ input::placeholder {
   display: none;
 }
 
-label {
+.label {
   display: inline-block;
   width: 395px;
   text-align: left;
@@ -95,4 +96,28 @@ label {
 
 .add-button:hover {
   opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+  .add-property {
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .add-form > label > input,
+  .select-css {
+    width: 200px;
+  }
+
+  .label {
+    width: 295px;
+  }
+}
+
+@media (max-width: 750px) {
+  .add-property {
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

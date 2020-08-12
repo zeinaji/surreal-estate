@@ -28,7 +28,7 @@
 
 .error-message {
   padding: 10px;
-  width: 98.5;
+  width: 98.5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,6 +55,20 @@
   z-index: -1;
 }
 
+.footer {
+  background-color: rgb(139, 192, 185, 0.2);
+  height: 100px;
+  width: 98.5%;
+  position: absolute;
+  color: rgb(53, 175, 212);
+  bottom: 0px;
+  right: 10px;
+  left: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
 @media (max-width: 1100px) {
   .properties-list {
     grid-template-columns: 1fr 1fr 1fr;
@@ -77,9 +91,18 @@
   .properties {
     grid-template-columns: 1fr;
     grid-template-rows: 300px 6fr 100px;
-    margin-left: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-right: 0;
+  }
+  .side-bar {
+    margin-right: 0px;
+    margin-left: 0px;
   }
   .footer {
     flex-direction: column;
+    left: 0;
+    right: 0;
+    width: 100vw;
   }
 }

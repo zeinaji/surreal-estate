@@ -1,11 +1,10 @@
 .navbar {
   background: white;
-  width: 98.5%;
+  width: 98.5vw;
   height: 100px;
   /* position: relative;*/
   /* display: flex;
   align-items: center;*/
-
   margin: 10px;
   margin-top: 0;
 
@@ -97,5 +96,13 @@ a {
 @media (max-width: 450px) {
   .surreal-estate {
     padding-top: 10px;
+  }
+}
+
+@media (max-width: 750px) {
+  .navbar {
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
   }
 }

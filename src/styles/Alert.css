@@ -16,3 +16,9 @@
 .fail {
   background-color: rgb(235, 112, 112);
 }
+
+@media (max-width: 480px) {
+  .alert {
+    width: 300px;
+  }
+}
