@@ -3,7 +3,7 @@ import axios from "axios";
 const getSaved = async (userID) => {
   try {
     const response = await axios.get(
-      `https://surreal-estate1.herokuapp.com/api/v1/PropertyListing?query={"fbUserId":${userID}}&populate=propertyListing`
+      `https://surreal-estate1.herokuapp.com/api/v1/Favourite?query={"fbUserId":${userID}}&populate=propertyListing`
     );
     return response;
   } catch (err) {
